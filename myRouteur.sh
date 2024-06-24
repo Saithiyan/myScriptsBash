@@ -31,7 +31,7 @@ if [[ "$iface_type" == "s" ]]; then
 # The static net
 auto $interface_name
 iface $interface_name inet static
-	address $ip_static/$netmasko" >> /etc/network/interfaces
+	address $ip_static/$netmask" >> /etc/network/interfaces
 	done
 fi
 systemctl restart networking.service
@@ -63,6 +63,8 @@ if [[ "$boolNat" == "y" || "$boolNat" == "" ]]; then
 	nft list ruleset >> /etc/nftables.conf
 	cat /etc/nftables.conf
 fi
+
+syste√mctl restart nftables.service
 
 echo "fin de l'Etape 3 : Nat !"
 
