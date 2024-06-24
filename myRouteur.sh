@@ -64,7 +64,7 @@ if [[ "$boolNat" == "y" || "$boolNat" == "" ]]; then
 	cat /etc/nftables.conf
 fi
 
-syste√mctl restart nftables.service
+systemctl restart nftables.service
 
 echo "fin de l'Etape 3 : Nat !"
 
